@@ -79,7 +79,8 @@ RUN --mount=type=cache,target=/root/.cache/pip \
   cd stable-diffusion-webui && \
   git fetch && \
   git reset --hard ${SHA} && \
-  pip install -r requirements_versions.txt
+  pip install -r requirements_versions.txt && \
+  pip install "httpx==0.24.1" "httpcore==0.17.3"
 
 COPY . /docker
 
